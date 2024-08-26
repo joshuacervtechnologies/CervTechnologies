@@ -3,27 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CERV Technologies - Software Implementation and Integration</title>
-    <meta name="description" content="CERV Technologies specializes in software implementation, integration, and automation. Partner with us for your technology transformation.">
+    <title>CERV Technologies - Home</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0066cc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .interactive-image {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .interactive-image:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .animated-tab {
+            background-color: #004080;
+            color: white;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .animated-tab:hover {
+            background-color: #0066cc;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>CERV Technologies</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <p>Your Partner in Digital Transformation</p>
     </header>
-    
-    <section class="hero">
-        <h2>Your Partner in Technology Transformation</h2>
-        <p>We specialize in software implementation, integration, and automation to drive your business forward.</p>
-    </section>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <img src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Business Discussion" class="interactive-image">
+            <h2 class="section-title">Why Digital Transformation?</h2>
+            <p>Digital transformation can save your business significant time and money. By automating manual tasks and integrating software solutions, companies have saved up to 30% of their operational costs and reduced process times by 50%.</p>
+        </div>
+
+        <div class="content">
+            <div class="animated-tab" onclick="window.location.href='digital-transformation.html';">
+                Learn More About Digital Transformation
+            </div>
+            <div class="animated-tab" onclick="window.location.href='services.html';">
+                Our Services
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
     
     <footer>
         <p>&copy; 2024 CERV Technologies, LLC</p>
