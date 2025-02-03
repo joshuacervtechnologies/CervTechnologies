@@ -3,121 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CERV Technologies - Home</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #0066cc;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .interactive-image {
-            width: 100%;
-            height: auto;
-            max-width: 500px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .interactive-image:hover {
-            transform: scale(1.05);
-        }
-
-        .content {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .animated-tab {
-            background-color: #004080;
-            color: white;
-            padding: 10px 15px;
-            margin: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-
-        .animated-tab:hover {
-            background-color: #0066cc;
-        }
-
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-    </style>
+    <title>CERV Technologies</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>CERV Technologies</h1>
-        <p>Your Partner in Digital Transformation</p>
+    <header class="navbar">
+        <div class="logo">
+            <h1>CERV Technologies</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <section id="hero">
+        <h2>Transforming Manufacturing Through Digital Solutions</h2>
+        <p>Innovative solutions in software implementation, ERP consulting, and task automation.</p>
+        <button onclick="window.location.href='#contact'">Get Started</button>
+    </section>
 
-    <div class="container">
-        <div class="content">
-            <img src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Business Discussion" class="interactive-image">
-            <h2 class="section-title">Why Digital Transformation?</h2>
-            <p>Digital transformation can save your business significant time and money. By automating manual tasks and integrating software solutions, companies have saved up to 30% of their operational costs and reduced process times by 50%.</p>
-        </div>
-
-        <div class="content">
-            <div class="animated-tab" onclick="window.location.href='digital-transformation.html';">
-                Learn More About Digital Transformation
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service">
+                <h3>Software Implementation</h3>
+                <p>Efficient deployment of software to streamline your operations.</p>
             </div>
-            <div class="animated-tab" onclick="window.location.href='services.html';">
-                Our Services
+            <div class="service">
+                <h3>Software Integration</h3>
+                <p>Integrating diverse software platforms for seamless functionality.</p>
+            </div>
+            <div class="service">
+                <h3>ERP Consulting</h3>
+                <p>Optimizing ERP systems to enhance business processes and growth.</p>
+            </div>
+            <div class="service">
+                <h3>Automation</h3>
+                <p>Automating manual tasks to save time and resources.</p>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </section>
 
-    
-    <footer>
-        <p>&copy; 2024 CERV Technologies, LLC</p>
+    <section id="industries">
+        <h2>Industries We Serve</h2>
+        <p>We provide tailored solutions to help companies in various industries succeed in the digital age.</p>
+        <ul>
+            <li>Manufacturing</li>
+            <li>Retail</li>
+            <li>Healthcare</li>
+            <li>Finance</li>
+        </ul>
+    </section>
+
+    <footer id="contact">
+        <p>Contact Us: <a href="mailto:info@cervtechnologies.com">info@cervtechnologies.com</a></p>
     </footer>
 </body>
 </html>
