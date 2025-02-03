@@ -53,6 +53,12 @@ header .container {
   align-items: center; 
 }
 
+.logo-and-services {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 header .logo h1 {
   font-size: 24px;
   font-weight: 700;
@@ -77,6 +83,8 @@ header nav ul li a {
 header nav ul li a:hover {
   color: #007BFF; 
 }
+
+/* Buttons */
 
 .cta-button {
   display: inline-block;
@@ -230,7 +238,12 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
-
+  
+.logo-and-services {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
   header nav ul {
     flex-direction: column;
     gap: 10px;
