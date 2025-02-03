@@ -1,66 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CERV Technologies</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CervTech - Software Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <h1>CERV Technologies</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#industries">Industries</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <h2>Transforming Manufacturing Through Digital Solutions</h2>
-        <p>Innovative solutions in software implementation, ERP consulting, and task automation.</p>
-        <button onclick="window.location.href='#contact'">Get Started</button>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-list">
-            <div class="service">
-                <h3>Software Implementation</h3>
-                <p>Efficient deployment of software to streamline your operations.</p>
-            </div>
-            <div class="service">
-                <h3>Software Integration</h3>
-                <p>Integrating diverse software platforms for seamless functionality.</p>
-            </div>
-            <div class="service">
-                <h3>ERP Consulting</h3>
-                <p>Optimizing ERP systems to enhance business processes and growth.</p>
-            </div>
-            <div class="service">
-                <h3>Automation</h3>
-                <p>Automating manual tasks to save time and resources.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="industries">
-        <h2>Industries We Serve</h2>
-        <p>We provide tailored solutions to help companies in various industries succeed in the digital age.</p>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>CervTech</h1>
+      </div>
+      <nav>
         <ul>
-            <li>Manufacturing</li>
-            <li>Retail</li>
-            <li>Healthcare</li>
-            <li>Finance</li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#contact" class="cta-button">Contact Us</a></li>
         </ul>
-    </section>
+      </nav>
+    </div>
+  </header>
 
-    <footer id="contact">
-        <p>Contact Us: <a href="mailto:info@cervtechnologies.com">info@cervtechnologies.com</a></p>
-    </footer>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Driving Innovation Through Intelligent Software Solutions</h2>
+      <p>At CervTech, we specialize in delivering cutting-edge ERP implementations, process automation, and scalable system integrations tailored to your business needs.</p>
+      <a href="#contact" class="cta-button">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>ERP Implementation</h3>
+          <p>Seamless integration of ERP systems to streamline operations and enhance decision-making.</p>
+        </div>
+        <div class="service-card">
+          <h3>Process Automation</h3>
+          <p>Automate repetitive tasks in finance, supply chain, and project management to boost efficiency.</p>
+        </div>
+        <div class="service-card">
+          <h3>System Integration</h3>
+          <p>Connect disparate systems to create a unified, scalable, and future-proof infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About CervTech</h2>
+      <p>CervTech is a leading software solutions provider specializing in ERP implementations, process automation, and system integrations. We focus on delivering cost-optimized, efficient, and scalable solutions tailored to industries like construction, manufacturing, and healthcare.</p>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section id="industries" class="industries">
+    <div class="container">
+      <h2>Industries We Serve</h2>
+      <div class="industry-grid">
+        <div class="industry-card">
+          <h3>Construction</h3>
+          <p>Optimize project management and resource allocation with our tailored solutions.</p>
+        </div>
+        <div class="industry-card">
+          <h3>Manufacturing</h3>
+          <p>Enhance production efficiency and supply chain visibility through automation.</p>
+        </div>
+        <div class="industry-card">
+          <h3>Healthcare</h3>
+          <p>Streamline operations and improve patient care with integrated systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Ready to transform your business? Let’s discuss how CervTech can help you achieve your goals.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 CervTech. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
