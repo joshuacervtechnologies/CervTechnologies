@@ -89,20 +89,20 @@
     <div class="container">
       <h2>Contact Us</h2>
       <p>Ready to transform your business? Let’s discuss how CervTech can help you achieve your goals.</p>
-     <form
-  action="https://formspree.io/f/xeoekprw"
-  method="POST"
->
+  <form action="https://formspree.io/f/xeoekprw" method="POST">
   <label>
-    Your email:
-    <input type="email" name="email">
+    Your Name:
+    <input type="text" name="name" placeholder="Your Name" required>
   </label>
   <label>
-    Your message:
-    <textarea name="message"></textarea>
+    Your Email:
+    <input type="email" name="email" placeholder="Your Email" required>
   </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+  <label>
+    Your Message:
+    <textarea name="message" placeholder="Your Message" required></textarea>
+  </label>
+  <button type="submit" class="cta-button">Send Message</button>
 </form>
     </div>
   </section>
