@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CERV Technologies - AI as a Service</title>
+    <title>AI Powered Consumer Preference Study| CERV Technologies</title>
     <style>
         * {
             margin: 0;
@@ -72,6 +72,11 @@
             }
         }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -97,12 +102,11 @@
             font-size: 1.5rem;
             color: var(--primary-blue);
             font-weight: 700;
-            
+            transition: transform 0.3s ease;
         }
 
         .logo a:hover {
-           transition: transform 0.3s ease;
-           
+            transform: scale(1.05);
         }
 
         nav ul {
@@ -144,13 +148,13 @@
             padding: 0.75rem 2rem;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 78, 204, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 68, 204, 0.3);
         }
 
         .cta-button:hover {
             background: var(--secondary-blue);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(61, 153, 228, 0.982);
+            box-shadow: 0 6px 20px rgba(0, 68, 204, 0.4);
         }
 
         .cta-button::after {
@@ -159,13 +163,13 @@
 
         /* Hero Section */
         #hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             position: relative;
             overflow: hidden;
+            margin-top: 80px;
         }
 
         #hero::before {
@@ -212,7 +216,7 @@
             animation: slideInLeft 1.2s ease-out;
         }
 
-        .btn-primary, .btn-secondary, .btn-primary2 {
+        .btn-primary, .btn-secondary {
             padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -221,7 +225,7 @@
             display: inline-block;
         }
 
-        .btn-primary, .btn-primary2 {
+        .btn-primary {
             background: white;
             color: var(--primary-blue);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -251,29 +255,30 @@
             animation: slideInRight 1s ease-out;
         }
 
-        .placeholder-graphic {
-            width: 100%;
-            height: 400px;
+        .goal-section {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 15px;
+            padding: 2rem;
             backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            font-size: 2rem;
-            animation: float 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .goal-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
-        /* Services Section */
-        #services {
+        .goal-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Solution Overview */
+        #overview {
             padding: 100px 5%;
-            background: var(--light-grey);
+            background: white;
         }
 
         .section-header {
@@ -297,115 +302,261 @@
             animation: fadeInUp 1s ease-out 0.2s forwards;
         }
 
-        .services-grid {
+        /* UPDATED OVERVIEW CONTENT - THREE COLUMN LAYOUT */
+        .overview-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .overview-text {
+            padding-right: 1rem;
+        }
+
+        .overview-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-text p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            background: var(--primary-blue);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            margin-bottom: 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .demo-example {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            height: fit-content;
+        }
+
+        .demo-example::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .demo-prompt {
+            background: white;
+            color: var(--text-dark);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: left;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .demo-response {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Features Section */
+        #features {
+            padding: 100px 5%;
+            background: var(--light-gray);
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .service-card {
+        .feature-card {
             background: white;
-            padding: 2.5rem;
             border-radius: 15px;
+            padding: 2.5rem;
             box-shadow: 0 5px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             opacity: 0;
             animation: scaleIn 0.6s ease-out forwards;
         }
 
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
 
-        .service-card:hover {
+        .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
 
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border-radius: 15px;
+        .feature-icon {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
         }
 
-        .service-card h3 {
+        .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
-        .service-card p {
+        .feature-card p {
             color: var(--text-light);
             line-height: 1.7;
         }
 
-        /* Solutions Section */
-        #solutions {
+        /* Before/After Section */
+        #before-after {
             padding: 100px 5%;
             background: white;
         }
 
-        .solutions-content {
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
         }
 
-        .solutions-text {
-            opacity: 0;
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-
-        .solutions-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-
-        .solutions-text p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .industry-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            opacity: 0;
-            animation: slideInRight 0.8s ease-out 0.2s forwards;
-        }
-
-        .industry-item {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-blue);
+        .comparison-column {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
         }
 
-        .industry-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        .before-column {
+            border-top: 5px solid #ff6b6b;
         }
 
-        .industry-item h4 {
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
+        .after-column {
+            border-top: 5px solid #51cf66;
+        }
+
+        .comparison-column h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .before-column h3 {
+            color: #ff6b6b;
+        }
+
+        .after-column h3 {
+            color: #51cf66;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-list li::before {
+            content: '•';
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Demo Section */
+        #demo {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .demo-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         /* CTA Section */
@@ -426,11 +577,6 @@
             height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
 
         .cta-content {
@@ -505,72 +651,6 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            nav ul {
-                gap: 1.5rem;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .solutions-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .industry-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Scroll animations trigger */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -584,12 +664,6 @@
             background-color: rgb(0,0,0);
             background-color: rgba(0,0,0,0.4);
             padding-top: 60px;
-            opacity: 0;
-            transition: opacity 0.3s ease-out;
-        }
-
-        .modal.show {
-            opacity: 1;
         }
 
         .modal-content {
@@ -600,15 +674,8 @@
             width: 80%;
             max-width: 600px;
             border-radius: 10px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease-out;
-        }
-
-        .modal.show .modal-content {
-            transform: translateY(0);
-            opacity: 1;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.6s ease-out;
         }
 
         .close {
@@ -632,8 +699,8 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid #ccc;
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
             border-radius: 5px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
@@ -659,6 +726,76 @@
         .submit-btn:hover {
             background: var(--secondary-blue);
         }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .overview-content {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .overview-image {
+                height: 400px;
+            }
+        }
+
+        /* Scroll animations trigger */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -666,13 +803,12 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html"> CERV Technologies</a>
+                <a href="index.html">CERV Technologies</a>
             </div>
             <ul>
                 <li><a href="use-cases.html">Use Cases</a></li>
                 <li><a href="ClientPortal.html">Client Portal</a></li>
                 <li><a href="#" class="cta-button">Let's Talk</a></li>
-              
             </ul>
         </nav>
     </header>
@@ -681,74 +817,69 @@
     <section id="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Transforming Organizations Through Innovation</h1>
-                <p>We develop AIaaS (AI as a Service) solutions through machine learning, agentic workflows, and LLM services that drive your business forward.</p>
+                <h1>Predictive Maintenance</h1>
+                
                 <div class="hero-buttons">
-                    <a href="use-cases.html" class="btn-primary2">Explore Solutions</a>
-                    <a href="#contact" class="btn-secondary">Contact Us</a>
+
                 </div>
             </div>
-             <div class="hero-visual">
-                <img src="AIaaS.gif" alt="Hero Graphic" class="placeholder-graphic">
+            <div class="hero-visual">
+                <div class="goal-section">
+                    <h2>Goal</h2> 
+                    <p>Keep your equipment running smoothly by predicting failures before they happen — so you can schedule maintenance on your terms, not when the machine decides to quit.</p>
+                    <p>Your production line already produces the clues: sensor data, vibration logs, temperature readings, error codes, and cycle times. Machine learning connects the dots between those signals, identifying subtle warning signs long before they turn into downtime.</p>
+                    
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+ 
+
+    <!-- Features Section -->
+    <section id="features">
         <div class="section-header">
-            <h2>Our Services</h2>
+            <h2>Uses</h2>
             
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                
-                <h3>Domain Specific LLM</h3>
-                <p>Domain specific fine-tuned LLMs generate analytics, reduce errors, and ensure compliance.</p>
-            </div>
-            <div class="service-card">
-               
-                <h3>Workflow Automation</h3>
-                <p>Streamline repetitive tasks by replacing manual tasks with efficiency and scalability.</p>
-            </div>
-            <div class="service-card">
-                
+        <div class="features-grid">
+            <div class="feature-card">
                 <h3>Machine Learning</h3>
-                <p>Leverage data to automate complex decisions, deliver actionable insights , and personalize customer experience.</p>
+                <p>Analyzes years of machine data, from sensor readings to service records, to uncover the earliest signs of wear or breakdown</p>
             </div>
-            <div class="service-card">
-                
-                <h3>Business Intelligence</h3>
-                <p>Transform raw data into actionable insights and improve operational preformance.</p>
+            <div class="feature-card">
+                <h3>Prediction Model</h3>
+                <p>Predicts the probability and time window of upcoming failures, providing precise insight</p>
             </div>
+            <div class="feature-card">
+                <h3>Data Insights</h3>
+                <p>Provides insights into which parts, conditions, or operators most influence equipment health</p>
+            </div>
+            
+            
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions">
-        <div class="solutions-content">
-            <div class="solutions-text">
-                <h2>Industries We Serve</h2>
-                <p>We bring deep industry expertise and innovative solutions to help companies across various sectors succeed in the digital age. Our tailored approach ensures that each solution aligns perfectly with your industry's unique challenges and opportunities.</p>
+    <!-- Before/After Section -->
+    <section id="before-after">
+        <div class="comparison-grid">
+            <div class="comparison-column before-column">
+                <h3>Before</h3>
+                <ul class="comparison-list">
+                    <li>Maintenance was reactive — you found out about issues when a machine went down</li>
+                    <li>Repairs were rushed and expensive, disrupting schedules</li>
+                    <li>You relied on guesswork and tribal knowledge to decide when to service assets</li>
+                    <li>Unexpected downtime damaged customer trust and delivery commitments</li>
+                </ul>
             </div>
-            <div class="industry-list">
-                <div class="industry-item">
-                    <h4>Manufacturing</h4>
-                    <p>Drive cost reduction, reduce down time, and increase OEE</p>
-                </div>
-                <div class="industry-item">
-                    <h4>Retail</h4>
-                    <p>Better understand consumer preferences and increase operating margin</p>
-                </div>
-                <div class="industry-item">
-                    <h4>Acccounting</h4>
-                    <p>Automate manual processing, free up time by reducing data and process disarray </p>
-                </div>
-                <div class="industry-item">
-                    <h4>Construction</h4>
-                    <p>Streamline subcontractor and stakeholder communication. Get instant insights on blueprints. </p>
-                </div>
+            <div class="comparison-column after-column">
+                <h3>After</h3>
+                <ul class="comparison-list">
+                    <li>Indicators signal upcoming failures far in advance, allowing proactive scheduling</li>
+                    <li>Maintenance teams plan instead of firefight — fewer emergency calls, less stress</li>
+                    <li>Operating costs drop as parts are replaced JIT, not too soon or too late</li>
+                    <li>You are confident about the condition of your equipment- failure root causes are accurately identified</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -756,9 +887,9 @@
     <!-- CTA Section -->
     <section id="cta">
         <div class="cta-content">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Let's discuss how CERV Technologies can help you achieve your digital transformation goals.</p>
-            <a href="#contact" class="btn-primary">Start Your Journey</a>
+            <h2>Ready to Protect your Equipment?</h2>
+            <p>Let's discuss how CERV Technologies can implement AI-powered equipment maintenance tools to avoid downtime, unnecessary costs, and extend machine lifetime.</p>
+            <a href="#" class="btn-primary">Start Your Journey</a>
         </div>
     </section>
 
@@ -772,7 +903,7 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="use-cases.html">Services</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#solutions">Solutions</a></li>
                     <li><a href="#about">About Us</a></li>
                 </ul>
@@ -788,9 +919,32 @@
         </div>
     </footer>
 
+    <!-- Modal Form -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Let's Connect</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="projectDescription" name="projectDescription" placeholder="Project Description" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <script>
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]:not(.cta-button)').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]:not(.cta-button):not(.btn-primary)').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -824,7 +978,7 @@
 
         // Observe elements that should animate on scroll
         document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.service-card, .industry-item');
+            const animatedElements = document.querySelectorAll('.feature-card, .comparison-column');
             animatedElements.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
@@ -880,11 +1034,12 @@
                     }, 10);
                 });
             });
+
             function closeModal() {
                 modal.classList.remove('show');
                 setTimeout(() => {
                     modal.style.display = "none";
-                }, 300); // Wait for fade out animation to complete
+                }, 300);
             }
 
             if (span) {
@@ -896,38 +1051,17 @@
                     closeModal();
                 }
             });
+
+            // Form submission handling
+            const form = document.getElementById("contactForm");
+            if (form) {
+                form.onsubmit = function(event) {
+                    event.preventDefault();
+                    closeModal();
+                    alert("Thanks! A member from our team will be in contact soon!");
+                }
+            }
         });
-
-        // Form submission handling
-        document.getElementById("contactForm").onsubmit = function(event) {
-            event.preventDefault();
-            // Here you can add the code to handle the form submission, e.g., sending data to your server
-            closeModal();
-            alert("Thank you for contacting us! We will get back to you soon.");
-        }
     </script>
-
-    <!-- Modal Form -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Let's Connect</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="projectDescription" name="projectDescription" placeholder="Project Description" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
-    </div>
 </body>
 </html>
