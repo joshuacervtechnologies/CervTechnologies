@@ -110,7 +110,7 @@
                         </svg>
                     </a>
                     <div class="dropdown dropdown--single" role="menu" aria-labelledby="resourcesToggle">
-                        <a class="dropdown-link" href="../What-is-SEO.html" role="menuitem">
+                        <a class="dropdown-link" href="what-is-seo.html" role="menuitem">
                             <span>What's SEO?</span>
                         </a>
                     </div>
@@ -732,12 +732,46 @@ If your website has strong SEO, it’s much more likely to rank higher than a co
     </section>
 
 
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <div class="contact-intro">
+                <p class="contact-eyebrow">Let's talk</p>
+                <h2>Ready to grow your business?</h2>
+                <p>Tell us a little about your goals. We'll get back to you to talk through the next steps.</p>
+            </div>
+            <div class="contact-form-card">
+                <!-- Replace the Formspree form ID in this action with your own endpoint. -->
+                <form class="contact-form" action="https://formspree.io/f/mzerrpbw" method="POST">
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" autocomplete="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-business">Business name <span>(optional)</span></label>
+                        <input type="text" id="contact-business" name="business" autocomplete="organization">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">How can we help?</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>CERV Technologies, LLC</h3>
-                <p>Websites, SEO marketing, social media, and paid media ad campaigns to help keep our customers growing.</p>
+                <p>Websites, SEO marketing, social media management, and paid media ad campaigns to help keep our customers growing.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -745,7 +779,6 @@ If your website has strong SEO, it’s much more likely to rank higher than a co
                     <li><a href="#services">Services</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#faq">FAQs</a></li>
-                    <li><a href="about.html">About Us</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -758,29 +791,6 @@ If your website has strong SEO, it’s much more likely to rank higher than a co
             <p> 2026 CERV Technologies. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Modal Form -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Let's Connect</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="projectDescription" name="projectDescription" placeholder="Project Description" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
-    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -803,10 +813,28 @@ If your website has strong SEO, it’s much more likely to rank higher than a co
                     e.preventDefault();
                     const shouldOpen = !item.classList.contains('open');
                     dropdownItems.forEach(closeDropdown);
+                    item.classList.remove('dismissed');
                     if (shouldOpen) {
                         item.classList.add('open');
                         toggle.setAttribute('aria-expanded', 'true');
+                    } else {
+                        item.classList.add('dismissed');
                     }
+                });
+
+                item.querySelectorAll('.dropdown-link').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        dropdownItems.forEach(closeDropdown);
+                        item.classList.add('dismissed');
+                    });
+                });
+
+                item.addEventListener('pointerleave', function () {
+                    item.classList.remove('dismissed');
+                });
+
+                item.addEventListener('focusout', function () {
+                    if (!item.matches(':hover')) item.classList.remove('dismissed');
                 });
             });
 
@@ -976,47 +1004,6 @@ If your website has strong SEO, it’s much more likely to rank higher than a co
                 }
             }, { passive: true });
 
-            /* ---------- Contact modal ---------- */
-            const modal = document.getElementById('contactModal');
-            const closeBtn = modal ? modal.querySelector('.close') : null;
-            const openers = document.querySelectorAll('.cta-button, .btn-primary');
-
-            function openModal() {
-                modal.style.display = 'block';
-                requestAnimationFrame(() => modal.classList.add('show'));
-            }
-
-            function closeModal() {
-                modal.classList.remove('show');
-                setTimeout(() => { modal.style.display = 'none'; }, 300);
-            }
-
-            openers.forEach(btn => {
-                btn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    openModal();
-                });
-            });
-
-            if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-            window.addEventListener('click', function (event) {
-                if (event.target === modal) closeModal();
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
-            });
-
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (event) {
-                    event.preventDefault();
-                    contactForm.reset();
-                    closeModal();
-                    alert('Thank you for contacting us! We will get back to you soon.');
-                });
-            }
         });
     </script>
 </body>
